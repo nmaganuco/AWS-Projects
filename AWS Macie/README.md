@@ -1,6 +1,7 @@
 <h1>Using AWS Macie to find PII on S3 Buckets</h1>
 
 <h2>Description</h2>
+
 AWS Macie is a valuable tool for identifying and protecting Personally Identifiable Information (PII) in your Amazon S3 buckets. Here’s why it’s important to use Macie for this purpose:
 
 Automated Data Discovery: Macie automatically discovers and classifies sensitive data stored in your S3 buckets. This helps in identifying PII like social security numbers, credit card information, and other sensitive data without manual intervention.
