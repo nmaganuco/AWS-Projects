@@ -11,7 +11,45 @@ Compliance and Data Privacy: Many regulations, such as GDPR, CCPA, and HIPAA, re
 Risk Management: By detecting PII and other sensitive data, Macie helps you understand and manage the risks associated with data breaches or unauthorized access. This proactive approach enables you to take necessary actions to protect your data and minimize potential damage.
 
 By leveraging AWS Macie to scan for PII in S3 buckets, you enhance your organization’s ability to protect sensitive data, comply with regulations, and effectively manage data security risks.
-
 <br />
+<h2>Example Data:</h2>
 
+****************************************Drivers License Numbers - license.txt****************************************
+
+```python
+John Doe
+Pennsylvania
+99-999-999
+
+Jane Doe
+Texas
+210-555-555
+```
+
+****************************************Credit Card Details - creditcards.txt****************************************
+```python
+American Express
+358471835184008 05/27
+CVE: 450
+
+American Express
+754583025756934 07/29
+CCV: 4785
+
+Mastercard
+051051051501510
+Exp: 04/28
+Security code: 001
+```
+
+****************************************USA Social Security Numbers - socials.txt****************************************
+```Victoria
+Josh
+123-45-6789
+
+Jake
+000-00-000
+```
 <h2>Lab walk-through:</h2>
+
+<h3>Step 1 - Create an S3 bucket and add example data </h3> 
