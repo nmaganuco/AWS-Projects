@@ -63,3 +63,22 @@ Access your bucket and upload the text files that you saved earlier.
 
 ![369508056-eff7e60e-5cba-4743-a650-a7a134c547af](https://github.com/user-attachments/assets/3a648eab-25eb-41a9-ad6e-7a8244016c93)
 
+<h3>Step 1 - Enabling Amazon Macie </h3> 
+
+Head to the Amazon Macie console and make sure that you are in the same region as the S3 bucket.
+
+Select "Get Started" and then "Enable Macie"
+
+Once Macie is enabled, it will take a couple minutes for it to be ready. Once it is, you will see a screen similar to this:
+
+![Macie](/Amazon-Macie/Images/macie.png)
+
+Head to the "S3 Buckets" section and select "Create Job"
+
+Select the S3 bucket that you created and press "Next" until you reach the "Refine the scope" section.
+
+Select "One time job" and continue pressing "Next" until you reach the "General settings" section.
+
+Name the job anything you'd like and submit the job when finished.
+
+It may take 10-20 minutes for the job to complete. To find the results, select the job, press "Show Results" and then "Show Findings"
