@@ -61,4 +61,5 @@ The S3 bucket name must be unique. All configurations can be left as default. Cl
 
 Access your bucket and upload the text files that you saved earlier.
 
+![369508056-eff7e60e-5cba-4743-a650-a7a134c547af](https://github.com/user-attachments/assets/3a648eab-25eb-41a9-ad6e-7a8244016c93)
 
