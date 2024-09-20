@@ -43,7 +43,7 @@ Security code: 001
 ```
 
 ****************************************USA Social Security Numbers - socials.txt****************************************
-```Victoria
+```
 Josh
 123-45-6789
 
@@ -53,3 +53,12 @@ Jake
 <h2>Lab walk-through:</h2>
 
 <h3>Step 1 - Create an S3 bucket and add example data </h3> 
+Save the example data above as text files and then head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
+
+Click "Create Bucket"
+
+The S3 bucket name must be unique. All configurations can be left as default. Click "Create Bucket"
+
+Access your bucket and upload the text files that you saved earlier.
+
+
