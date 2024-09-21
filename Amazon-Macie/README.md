@@ -30,6 +30,25 @@ Exp: 04/28
 Security code: 001
 ```
 
+****************Custom data (Australian licence plates) - plates.txt****************
+
+```python
+# Victoria
+1BE8BE
+ABC123
+DEF-456
+
+# New South Wales
+AO31BE
+AO-15-EB
+BU-60-UB
+
+# Queensland
+123ABC
+000ZZZ
+987-YXW
+```
+
 <h3>Step 1 - Create an S3 bucket and add example data </h3> 
 Save the example data above as text files and then head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
 
@@ -39,9 +58,9 @@ The S3 bucket name must be unique. All configurations can be left as default. Cl
 
 Access your bucket and upload the text files that you saved earlier.
 
-![369508056-eff7e60e-5cba-4743-a650-a7a134c547af](https://github.com/user-attachments/assets/3a648eab-25eb-41a9-ad6e-7a8244016c93)
+![s3](/Amazon-Macie/Images/s3.png)
 
-<h3>Step 1 - Enabling Amazon Macie </h3> 
+<h3>Step 2 - Enabling Amazon Macie </h3> 
 
 Head to the Amazon Macie console and make sure that you are in the same region as the S3 bucket.
 
@@ -85,7 +104,7 @@ Your subscription will now be in a confirmed state.
 
 ![SNS](/Amazon-Macie/Images/SNS.png)
 
-<h3>Step 3 - Setting up EventBridge </h3> 
+<h3>Step 4 - Setting up EventBridge </h3> 
 
 Head to the EventBridge Console.
 
@@ -103,6 +122,40 @@ Choose "SNS Topic" as your target and then select your SNS topic.
 
 Click "Next" and then "Create Rule"
 
-<h3>Step 3 - Adding a Cutom Macie Data Identifier </h3> 
+<h3>Step 5 - Adding a Cutom Macie Data Identifier </h3> 
 
+Head back to the Macie Console.
 
+Click on the "Custom Data Identifiers" section and click "Create"
+
+Set the name to "License Plates"
+
+Set the Regular Expression to:
+
+```python
+([0-9][a-zA-Z][a-zA-Z]-?[0-9][a-zA-Z][a-zA-Z])|([a-zA-Z][a-zA-Z][a-zA-Z]-?[0-9][0-9][0-9])|([a-zA-Z][a-zA-Z]-?[0-9][0-9]-?[a-zA-Z][a-zA-Z])|([0-9][0-9][0-9]-?[a-zA-Z][a-zA-Z][a-zA-Z])|([0-9][0-9][0-9]-?[0-9][a-zA-Z][a-zA-Z])
+```
+
+This will pick up the license plate format from the example above.
+
+Press "Submit"
+
+<h3>Step 6 - Starting a New Job </h3> 
+
+On the Macie Console, select "S3 Bucket" and "Create Job"
+
+Select your S3 bucket and press "Next"
+
+On the "Refine the Scope" page, select "One time job"
+
+Continue pressing "Next" until you reach the "Custom Data Identifier" page.
+
+Select the License plate identifier and click "Next"
+
+Name the job and then press "Submit"
+
+After a few minutes, you will recieve a couple emails from SNS with the findings.
+
+You can see that Macie found 9 license plates in our text files.
+
+![custom](/Amazon-Macie/Images/customid.png)
