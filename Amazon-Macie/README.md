@@ -14,18 +14,6 @@ By leveraging AWS Macie to scan for PII in S3 buckets, you enhance your organiza
 <br />
 <h2>Example Data:</h2>
 
-****************************************Drivers License Numbers - license.txt****************************************
-
-```python
-John Doe
-Pennsylvania
-99-999-999
-
-Jane Doe
-Texas
-210-555-555
-```
-
 ****************************************Credit Card Details - creditcards.txt****************************************
 ```python
 American Express
@@ -41,16 +29,6 @@ Mastercard
 Exp: 04/28
 Security code: 001
 ```
-
-****************************************USA Social Security Numbers - socials.txt****************************************
-```
-Josh
-123-45-6789
-
-Jake
-000-00-000
-```
-<h2>Lab walk-through:</h2>
 
 <h3>Step 1 - Create an S3 bucket and add example data </h3> 
 Save the example data above as text files and then head to the S3 console: https://s3.console.aws.amazon.com/s3/buckets
@@ -108,3 +86,23 @@ Your subscription will now be in a confirmed state.
 ![SNS](/Amazon-Macie/Images/SNS.png)
 
 <h3>Step 3 - Setting up EventBridge </h3> 
+
+Head to the EventBridge Console.
+
+Select "EventBridge Rule" and click "Create Rule"
+
+Set the name to "Macie-Events" and click "Next"
+
+Scroll down to Create Method and select "Pattern Form"
+
+Set the AWS Service to "Macie" and Event Type to "Macie Finding"
+
+Click "Next"
+
+Choose "SNS Topic" as your target and then select your SNS topic.
+
+Click "Next" and then "Create Rule"
+
+<h3>Step 3 - Adding a Cutom Macie Data Identifier </h3> 
+
+
