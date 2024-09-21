@@ -110,6 +110,8 @@ Head to the EventBridge Console.
 
 Select "EventBridge Rule" and click "Create Rule"
 
+![event](/Amazon-Macie/Images/eventbridge.png)
+
 Set the name to "Macie-Events" and click "Next"
 
 Scroll down to Create Method and select "Pattern Form"
@@ -159,3 +161,11 @@ After a few minutes, you will recieve a couple emails from SNS with the findings
 You can see that Macie found 9 license plates in our text files.
 
 ![custom](/Amazon-Macie/Images/customid.png)
+
+<h3>Step 7 - Clean Up </h3> 
+
+Delete the SNS topic and EventBridge Rule.
+
+Disable Macie.
+
+Empty the contents of the S3 bucket and delete the bucket itself.
