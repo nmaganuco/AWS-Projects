@@ -82,3 +82,29 @@ Select "One time job" and continue pressing "Next" until you reach the "General 
 Name the job anything you'd like and submit the job when finished.
 
 It may take 10-20 minutes for the job to complete. To find the results, select the job, press "Show Results" and then "Show Findings"
+
+<h3>Step 3 - Setting up SNS </h3> 
+
+Head to the SNS Console.
+
+Click on "Create Topic"
+
+Set the type to "Standard"
+
+Set the name to "Macie-Alerts"
+
+Set the Publishers and subscribers to "Only the specified AWS accounts" and add your account ID, found on the top right.
+
+Leave everything else as default and click "Create Topic"
+
+Click "Create Subscription" and change the Protocol to Email.
+
+In the Endpoint section, add your personal email.
+
+Click on "Create Subscription. You will soon recieve an email with a link confirming that SNS can continue sending you emails.
+
+Your subscription will now be in a confirmed state.
+
+![SNS](/Amazon-Macie/Images/SNS.png)
+
+<h3>Step 3 - Setting up EventBridge </h3> 
